@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">HB</string>
+    <string name="action_kesach">Kệ sách</string>
+    <string name="action_khampha">Khám phá</string>
+    <string name="action_congdong">Cộng đồng</string>
+    <string name="action_canhan">Cá nhân</string>
 </resources>

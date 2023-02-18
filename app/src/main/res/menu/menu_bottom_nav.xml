@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_kesach"
+        android:title="@string/action_kesach"
+        android:icon="@drawable/img_kesach"/>
+
+    <item android:id="@+id/action_khampha"
+        android:title="@string/action_khampha"
+        android:icon="@drawable/img_khampha"/>
+
+    <item android:id="@+id/action_congdong"
+        android:title="@string/action_congdong"
+        android:icon="@drawable/img_congdong"/>
+
+    <item android:id="@+id/action_canhan"
+        android:title="@string/action_canhan"
+        android:icon="@drawable/img_caidat"/>
+</menu>

@@ -3,6 +3,7 @@ package com.example.hb;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CongDongActivity extends AppCompatActivity {
@@ -21,6 +23,14 @@ public class CongDongActivity extends AppCompatActivity {
 
         TextView txtDK = findViewById(R.id.textViewDangKy);
         TextView txtDN = findViewById(R.id.textViewDangNhap);
+        ImageView imgViewBack = findViewById(R.id.imageViewBack);
+
+        imgViewBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CongDongActivity.this, MainActivity.class));
+            }
+        });
 
         txtDK.setOnClickListener(new View.OnClickListener() {
             @Override

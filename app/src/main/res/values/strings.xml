@@ -4,4 +4,10 @@
     <string name="action_khampha">Khám phá</string>
     <string name="action_congdong">Cộng đồng</string>
     <string name="action_canhan">Cá nhân</string>
+    <string name="action_home_library">Kệ sách</string>
+    <string name="action_home_history">Lịch sử</string>
+    <string name="action_avatar">Avatar</string>
+    <string name="action_search">Search</string>
+    <string name="action_ch">Plus</string>
+    <string name="content_description_library">Library</string>
 </resources>

@@ -66,10 +66,9 @@ public class CongDongActivity extends AppCompatActivity {
 
         dialog.setCancelable(true);
 
-        dialog.show();
-
         if(layout == R.layout.custom_dialog_dangnhap) {
-            TextView txtQuenMatKhau = findViewById(R.id.textViewQuenMatKhau);
+            TextView txtQuenMatKhau = dialog.findViewById(R.id.textViewQuenMatKhau);
+
             txtQuenMatKhau.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -78,5 +77,8 @@ public class CongDongActivity extends AppCompatActivity {
                 }
             });
         }
+
+
+        dialog.show();
     }
 }

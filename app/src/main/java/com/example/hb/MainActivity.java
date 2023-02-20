@@ -11,28 +11,35 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.TextView;
 
+import com.example.hb.Adapter.TruyenAdapter;
 import com.example.hb.Fragment.LibraryFragment;
 import com.example.hb.Fragment.ReadHistoryFragment;
-import com.example.hb.activies.CongDongActivity;
+import com.example.hb.Object.Truyen;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView mNavigationView;
+    GridView gdvListTruyen;
+    TruyenAdapter adapter;
+    ArrayList truyenArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mNavigationView = findViewById(R.id.bottom_nav);
+
         mNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_congdong:
-                        startActivity(new Intent(MainActivity.this, CongDongActivity.class));
                         break;
                     case R.id.action_kesach:
                         break;
@@ -61,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 replaceFragment(new LibraryFragment());
             }
         });
+        init(); anhXa(); setUp(); setClick();
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -69,7 +77,29 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.nav_host_fragment_content_main,fragment);
         fragmentTransaction.commit();
     }
-
+    private void init(){
+        truyenArrayList = new ArrayList<>();
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        truyenArrayList.add(new Truyen("Anh anime dep","100","https://img.thuthuattinhoc.vn/uploads/2019/01/08/anh-anime-boy-dep-nhat_101905549.jpg"));
+        adapter = new TruyenAdapter(this,0,truyenArrayList);
+    }
+    private void anhXa(){
+        gdvListTruyen = findViewById(R.id.gdvListTruyen);
+    }
+    private void setUp(){
+        gdvListTruyen.setAdapter(adapter);
+    }
+    private void setClick(){}
 
     private void setUpViewPager() {
 

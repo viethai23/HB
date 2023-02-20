@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LibraryFragment"
-    android:background="@color/gray">
+    tools:context=".Fragment.LibraryFragment">
 
-    <TextView
+    <GridView
+        android:id="@+id/gdvListTruyen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Library"
-        android:textColor="@color/white"/>
+        android:layout_height="match_parent"
+        android:numColumns="4">
+    </GridView>
 
 </FrameLayout>

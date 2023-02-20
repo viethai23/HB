@@ -1,4 +1,4 @@
-package com.example.hb;
+package com.example.hb.activies;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,37 +14,25 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hb.MainActivity;
+import com.example.hb.R;
+
 public class CongDongActivity extends AppCompatActivity {
 
+    ImageView imgBack;
+    TextView txtSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cong_dong);
 
-        TextView txtDK = findViewById(R.id.textViewDangKy);
-        TextView txtDN = findViewById(R.id.textViewDangNhap);
-        ImageView imgViewBack = findViewById(R.id.imageViewBack);
+        imgBack = findViewById(R.id.imageBack);
+        txtSignIn = findViewById(R.id.txtSignIn);
 
-        imgViewBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CongDongActivity.this, MainActivity.class));
-            }
-        });
+        imgBack.setOnClickListener(v -> onBackPressed());
 
-        txtDK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(R.layout.custom_dialog_dangky);
-            }
-        });
+        txtSignIn.setOnClickListener(v -> openDialog(R.layout.activity_dang_nhap));
 
-        txtDN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openDialog(R.layout.custom_dialog_dangnhap);
-            }
-        });
     }
 
     private void openDialog(int layout) {
@@ -66,18 +54,26 @@ public class CongDongActivity extends AppCompatActivity {
 
         dialog.setCancelable(true);
 
-        if(layout == R.layout.custom_dialog_dangnhap) {
-            TextView txtQuenMatKhau = dialog.findViewById(R.id.textViewQuenMatKhau);
-
-            txtQuenMatKhau.setOnClickListener(new View.OnClickListener() {
+        if(layout == R.layout.activity_dang_nhap) {
+            TextView txtCreate = dialog.findViewById(R.id.textCreatNewAccount);
+            txtCreate.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     dialog.cancel();
-                    openDialog(R.layout.custom_dialog_quenmatkhau);
+                    openDialog(R.layout.activity_dang_ky);
                 }
             });
         }
-
+        else {
+            TextView txtSignIn = dialog.findViewById(R.id.textSignIn);
+            txtSignIn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.cancel();
+                    openDialog(R.layout.activity_dang_nhap);
+                }
+            });
+        }
 
         dialog.show();
     }

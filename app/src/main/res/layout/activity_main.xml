@@ -9,15 +9,15 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:padding="2dp"
-        android:background="@drawable/custom_nav"
+        android:background="@color/input_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
         app:itemBackground="@color/white"
-        app:itemIconTint="@color/black"
-        app:itemTextColor="@color/black"
-        app:menu="@menu/menu_bottom_nav" />
+        app:menu="@menu/menu_bottom_nav"
+        app:itemTextColor="@color/primary_text"
+        app:itemIconTint="@color/primary_text"/>
 
     <include layout="@layout/app_bar_main"/>
 

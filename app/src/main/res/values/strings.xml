@@ -1,13 +1,20 @@
 <resources>
     <string name="app_name">HB</string>
     <string name="action_kesach">Kệ sách</string>
-    <string name="action_khampha">Khám phá</string>
+    <string name="action_khampha">Tìm kiếm</string>
     <string name="action_congdong">Cộng đồng</string>
-    <string name="action_canhan">Cá nhân</string>
+    <string name="action_canhan">Cài đặt</string>
     <string name="action_home_library">Kệ sách</string>
     <string name="action_home_history">Lịch sử</string>
     <string name="action_avatar">Avatar</string>
     <string name="action_search">Search</string>
     <string name="action_ch">Plus</string>
     <string name="content_description_library">Library</string>
+    <string name="dangky">Đăng ký</string>
+    <string name="tenhienthi">Tên hiển thị</string>
+    <string name="email">Email</string>
+    <string name="matkhau">Mật khẩu</string>
+    <string name="dang_nhap">Đăng nhập</string>
+    <string name="create_new_account">Tạo tài khoản mới?</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
 </resources>

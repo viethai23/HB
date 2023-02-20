@@ -13,6 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.hb.Fragment.LibraryFragment;
+import com.example.hb.Fragment.ReadHistoryFragment;
+import com.example.hb.activies.CongDongActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

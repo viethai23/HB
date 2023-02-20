@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:id="@+id/action_kesach"
         android:title="@string/action_kesach"
-        android:icon="@drawable/img_kesach"/>
+        android:icon="@drawable/ic_menu"/>
 
     <item android:id="@+id/action_khampha"
         android:title="@string/action_khampha"
-        android:icon="@drawable/img_khampha"/>
+        android:icon="@drawable/ic_search"/>
 
     <item android:id="@+id/action_congdong"
         android:title="@string/action_congdong"
-        android:icon="@drawable/img_congdong"/>
+        android:icon="@drawable/ic_chat"/>
 
     <item android:id="@+id/action_canhan"
         android:title="@string/action_canhan"
-        android:icon="@drawable/img_caidat"/>
+        android:icon="@drawable/ic_setting"/>
 </menu>

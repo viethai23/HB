@@ -25,7 +25,7 @@
             android:layout_toEndOf="@id/action_account"
             android:fontFamily="@font/roboto_bold"
             android:layout_marginTop="2dp"
-            android:textColor="@color/black"
+            android:textColor="@color/primary_text"
             android:layout_marginStart="32dp"/>
         <TextView
             android:id="@+id/action_history"
@@ -34,7 +34,7 @@
             android:text="@string/action_home_history"
             android:layout_marginTop="2dp"
             android:fontFamily="@font/roboto_bold"
-            android:textColor="@color/black"
+            android:textColor="@color/primary_text"
             android:layout_toEndOf="@id/action_home_library"
             android:layout_marginStart="40dp"/>
         <ImageView

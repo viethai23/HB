@@ -10,6 +10,11 @@
     <string name="action_search">Search</string>
     <string name="action_ch">Plus</string>
     <string name="content_description_library">Library</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dangky">Đăng ký</string>
+    <string name="tenhienthi">Tên hiển thị</string>
+    <string name="email">Email</string>
+    <string name="matkhau">Mật khẩu</string>
+    <string name="confirm_password">Nhập lại mật khẩu</string>
+    <string name="dang_nhap">Đăng nhập</string>
+    <string name="create_new_account">Bạn chưa có tài khoản?</string>
 </resources>

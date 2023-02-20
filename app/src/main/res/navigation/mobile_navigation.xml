@@ -2,4 +2,16 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation" />
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/libraryFragment">
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.hb.LibraryFragment"
+        android:label="fragment_library"
+        tools:layout="@layout/fragment_library" />
+    <fragment
+        android:id="@+id/readHistoryFragment"
+        android:name="com.example.hb.ReadHistoryFragment"
+        android:label="fragment_read_history"
+        tools:layout="@layout/fragment_read_history" />
+</navigation>

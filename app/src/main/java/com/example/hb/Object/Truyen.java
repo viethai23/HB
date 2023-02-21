@@ -1,9 +1,24 @@
 package com.example.hb.Object;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Truyen {
     private String tenTruyen,tenChap,linkAnh;
 
     public Truyen(){
+    }
+/*
+{
+"tenTruyen":"",
+"tenChap":"",
+"linkAnh":""
+}
+ */
+    public Truyen(JSONObject o) throws JSONException{
+        tenTruyen = o.getString("tenTruyen");
+        tenChap = o.getString("tenChap");
+        linkAnh = o.getString("linkAnh");
     }
 
     public Truyen(String tenTruyen, String tenChap, String linkAnh) {

@@ -1,4 +1,4 @@
-package com.example.hb.firebase;
+package com.example.hb.Firebase;
 
 import androidx.annotation.NonNull;
 

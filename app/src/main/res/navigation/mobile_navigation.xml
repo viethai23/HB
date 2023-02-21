@@ -6,12 +6,14 @@
     app:startDestination="@id/libraryFragment">
     <fragment
         android:id="@+id/libraryFragment"
-        android:name="com.example.hb.LibraryFragment"
+        android:name="com.example.hb.Fragment.LibraryFragment"
         android:label="fragment_library"
-        tools:layout="@layout/fragment_library" />
+        tools:layout="@layout/fragment_library" >
+    </fragment>
     <fragment
         android:id="@+id/readHistoryFragment"
-        android:name="com.example.hb.ReadHistoryFragment"
+        android:name="com.example.hb.Fragment.ReadHistoryFragment"
         android:label="fragment_read_history"
-        tools:layout="@layout/fragment_read_history" />
+        tools:layout="@layout/fragment_read_history" >
+    </fragment>
 </navigation>

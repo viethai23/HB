@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.hb.Object.Truyen;
@@ -23,7 +24,7 @@ public class TruyenAdapter extends ArrayAdapter<Truyen> {
     private Context ct;
     private ArrayList<Truyen> arr;
 
-    public TruyenAdapter(@NonNull Context context, int resource, @NonNull List<Truyen> objects) {
+    public TruyenAdapter(@NonNull FragmentActivity context, int resource, @NonNull List<Truyen> objects) {
         super(context, resource, objects);
         this.ct = context;
         this.arr = new ArrayList<>(objects);

@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.hb.Adapter.ChapTruyenItemAdapter;
-import com.example.hb.Api.ApiJsoupContentTruyen;
+import com.example.hb.Api.ApiJsoupContentTruyenNovelFull;
+import com.example.hb.Api.ApiJsoupContentTruyenWikidich;
 import com.example.hb.Interfaces.LayGioiThieuTruyen;
-import com.example.hb.Interfaces.LayTruyenCV;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.Object.TruyenKhamPhaTruyen;
@@ -41,7 +41,8 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
         anhXa();
         setUp();
         setClick();
-        new ApiJsoupContentTruyen((LayGioiThieuTruyen) this, truyenKhamPha.getDetailURL()).execute();
+        //new ApiJsoupContentTruyenWikidich((LayGioiThieuTruyen) this, truyenKhamPha.getDetailURL()).execute();
+        new ApiJsoupContentTruyenNovelFull(this,truyenKhamPha.getDetailURL()).execute();
     }
 
     private void init() {
@@ -63,8 +64,6 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     }
 
     private void setUp() {
-        chapTenTruyen.setText(truyenKhamPha.getTenTruyen());
-        Glide.with(this).load(truyenKhamPha.getLinkAnh()).into(imgChap);
         listChap.setAdapter(adapter);
     }
 
@@ -82,6 +81,8 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
         chapTrangThai.setText(truyen.getTrangThai());
         chapTheLoai.setText(truyen.getTheLoai());
         chapGioiThieu.setText(truyen.getGioiThieu());
+        chapTenTruyen.setText(truyen.getTenTruyen());
+        Glide.with(this).load(truyen.getLinkAnh()).into(imgChap);
         arrChap.clear();
         arrChap = data2;
         adapter = new ChapTruyenItemAdapter(this,0,arrChap);

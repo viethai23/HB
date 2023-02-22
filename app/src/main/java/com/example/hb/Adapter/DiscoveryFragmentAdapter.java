@@ -6,7 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.hb.Fragment.KhamPhaHomeFragment;
+import com.example.hb.Fragment.NovelFullFragment;
+import com.example.hb.Fragment.WikidichFragment;
 
 public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
     public DiscoveryFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -16,12 +17,14 @@ public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-
-        return new KhamPhaHomeFragment();
+        if(position==1){
+            return new NovelFullFragment();
+        }
+        return new WikidichFragment();
     }
 
     @Override
     public int getItemCount() {
-        return 1;
+        return 2;
     }
 }

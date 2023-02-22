@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.hb.Object.TruyenKhamPha;
@@ -19,17 +18,15 @@ import com.example.hb.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KhamPhaTruyenAdapter extends ArrayAdapter<TruyenKhamPha> {
-
+public class NovelfullAdapter extends ArrayAdapter<TruyenKhamPha> {
     private Context ct;
     private ArrayList<TruyenKhamPha> arr;
 
-    public KhamPhaTruyenAdapter(@NonNull FragmentActivity context, int resource, @NonNull List<TruyenKhamPha> objects) {
+    public NovelfullAdapter(@NonNull Context context, int resource, @NonNull List<TruyenKhamPha> objects) {
         super(context, resource, objects);
         this.ct = context;
         this.arr = new ArrayList<>(objects);
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

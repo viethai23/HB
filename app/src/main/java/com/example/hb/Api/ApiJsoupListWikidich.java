@@ -14,12 +14,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ApiJsoupListTruyen extends AsyncTask<Void,Void,Void> {
+public class ApiJsoupListWikidich extends AsyncTask<Void,Void,Void> {
 
     LayTruyenCV layTruyenCV;
     ArrayList<TruyenKhamPha> KhamPharuyenArrayList = new ArrayList<>();
 
-    public ApiJsoupListTruyen(LayTruyenCV layTruyenCV) {
+    public ApiJsoupListWikidich(LayTruyenCV layTruyenCV) {
         this.layTruyenCV = layTruyenCV;
         this.layTruyenCV.batDauCV();
     }

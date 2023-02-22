@@ -4,7 +4,6 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.example.hb.Interfaces.LayGioiThieuTruyen;
-import com.example.hb.Interfaces.LayTruyenVe;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.Object.TruyenKhamPhaTruyen;
 
@@ -15,12 +14,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ApiJsoupContentTruyen extends AsyncTask<Void,Void,Void> {
+public class ApiJsoupContentTruyenWikidich extends AsyncTask<Void,Void,Void> {
     LayGioiThieuTruyen layGioiThieuTruyen;
     String url;
     ArrayList<ChapTruyen> arrChapters = new ArrayList<>();
     TruyenKhamPhaTruyen data;
-    public ApiJsoupContentTruyen(LayGioiThieuTruyen layGioiThieuTruyen,String url) {
+    public ApiJsoupContentTruyenWikidich(LayGioiThieuTruyen layGioiThieuTruyen, String url) {
         this.layGioiThieuTruyen = layGioiThieuTruyen;
         this.url = url;
         this.layGioiThieuTruyen.batDau();
@@ -60,7 +59,7 @@ public class ApiJsoupContentTruyen extends AsyncTask<Void,Void,Void> {
             for(int i=0;i<sizeDes;i++){
                 gioiThieu+=des.text()+". ";
             }
-            data = new TruyenKhamPhaTruyen(tenTacGia,trangThai,theLoai,gioiThieu);
+            //data = new TruyenKhamPhaTruyen(tenTacGia,trangThai,theLoai,gioiThieu);
 
             Log.d("content:",tenTacGia+". " + trangThai +". " +theLoai + ". "+gioiThieu);
 

@@ -15,26 +15,26 @@ import android.widget.GridView;
 import android.widget.Toast;
 
 import com.example.hb.Activities.ChapActivity;
-import com.example.hb.Adapter.KhamPhaTruyenAdapter;
-import com.example.hb.Api.ApiJsoupListTruyen;
+import com.example.hb.Adapter.WikidichAdapter;
+import com.example.hb.Api.ApiJsoupListWikidich;
 import com.example.hb.Interfaces.LayTruyenCV;
 import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.R;
 
 import java.util.ArrayList;
 
-public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
+public class WikidichFragment extends Fragment implements LayTruyenCV {
 
     View view;
     GridView gdvKhamPha;
-    KhamPhaTruyenAdapter adapter;
+    WikidichAdapter adapter;
     ArrayList khamPhaTruyenArrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_kham_pha_home, container, false);
+        view = inflater.inflate(R.layout.fragment_wikidich, container, false);
         return view;
     }
 
@@ -45,16 +45,16 @@ public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
         anhXa();
         setUp();
         setClick();
-        new ApiJsoupListTruyen(this).execute();
+        new ApiJsoupListWikidich(this).execute();
     }
 
     private void init(){
         khamPhaTruyenArrayList = new ArrayList<>();
-        adapter = new KhamPhaTruyenAdapter(getActivity(),0,khamPhaTruyenArrayList);
+        adapter = new WikidichAdapter(getActivity(),0,khamPhaTruyenArrayList);
     }
     private void anhXa(){
 
-        gdvKhamPha = view.findViewById(R.id.gdvKhamPha);
+        gdvKhamPha = view.findViewById(R.id.gdvWikidich);
     }
     private void setUp(){
 
@@ -84,7 +84,7 @@ public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
     public void ketThucCV(ArrayList data) {
         khamPhaTruyenArrayList.clear();
         khamPhaTruyenArrayList = data;
-        adapter = new KhamPhaTruyenAdapter(getActivity(),0,khamPhaTruyenArrayList);
+        adapter = new WikidichAdapter(getActivity(),0,khamPhaTruyenArrayList);
         gdvKhamPha.setAdapter(adapter);
     }
 

@@ -1,9 +1,11 @@
 package com.example.hb.Object;
 
 public class TruyenKhamPhaTruyen {
-    private String tenTacGia,trangThai,theLoai,gioiThieu;
+    private String linkAnh,tenTruyen,tenTacGia,trangThai,theLoai,gioiThieu;
 
-    public TruyenKhamPhaTruyen(String tenTacGia, String trangThai, String theLoai, String gioiThieu) {
+    public TruyenKhamPhaTruyen(String linkAnh, String tenTruyen, String tenTacGia, String trangThai, String theLoai, String gioiThieu) {
+        this.linkAnh = linkAnh;
+        this.tenTruyen = tenTruyen;
         this.tenTacGia = tenTacGia;
         this.trangThai = trangThai;
         this.theLoai = theLoai;
@@ -40,5 +42,21 @@ public class TruyenKhamPhaTruyen {
 
     public void setGioiThieu(String gioiThieu) {
         this.gioiThieu = gioiThieu;
+    }
+
+    public String getLinkAnh() {
+        return linkAnh;
+    }
+
+    public void setLinkAnh(String linkAnh) {
+        this.linkAnh = linkAnh;
+    }
+
+    public String getTenTruyen() {
+        return tenTruyen;
+    }
+
+    public void setTenTruyen(String tenTruyen) {
+        this.tenTruyen = tenTruyen;
     }
 }

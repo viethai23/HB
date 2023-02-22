@@ -16,6 +16,7 @@ public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
+
         return new KhamPhaHomeFragment();
     }
 

@@ -6,6 +6,7 @@ import android.util.Log;
 import com.example.hb.Interfaces.LayTruyenCV;
 import com.example.hb.Object.TruyenKhamPha;
 
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -13,12 +14,12 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ApiJSOUP extends AsyncTask<Void,Void,Void> {
+public class ApiJsoupListTruyen extends AsyncTask<Void,Void,Void> {
 
     LayTruyenCV layTruyenCV;
     ArrayList<TruyenKhamPha> KhamPharuyenArrayList = new ArrayList<>();
 
-    public ApiJSOUP(LayTruyenCV layTruyenCV) {
+    public ApiJsoupListTruyen(LayTruyenCV layTruyenCV) {
         this.layTruyenCV = layTruyenCV;
         this.layTruyenCV.batDauCV();
     }
@@ -31,7 +32,7 @@ public class ApiJSOUP extends AsyncTask<Void,Void,Void> {
             Elements data = doc.select("div.book-item");
             int size = data.size();
             for(int i=0;i<size;i++){
-                String linkAnh = "https://wikidich3.com/"+data.select("div.cover-col")
+                String linkAnh = "https://wikidich3.com/" + data.select("div.cover-col")
                         .select("img")
                         .eq(i)
                         .attr("src");
@@ -39,7 +40,7 @@ public class ApiJSOUP extends AsyncTask<Void,Void,Void> {
                         .select("h5")
                         .eq(i)
                         .text();
-                String detailURL = data.select("div.cover.col")
+                String detailURL = "https://wikidich3.com/" + data.select("div.cover-col")
                         .select("a")
                         .eq(i)
                         .attr("href");

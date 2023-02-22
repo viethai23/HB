@@ -1,6 +1,8 @@
 package com.example.hb.Object;
 
-public class TruyenKhamPha {
+import java.io.Serializable;
+
+public class TruyenKhamPha implements Serializable {
     private String tenTruyen,linkAnh,detailURL;
 
     public TruyenKhamPha(String tenTruyen, String linkAnh,String detailURL) {
@@ -13,8 +15,8 @@ public class TruyenKhamPha {
         return tenTruyen;
     }
 
-    public void setTenTruyen(String tenTryen) {
-        this.tenTruyen = tenTryen;
+    public void setTenTruyen(String tenTruyen) {
+        this.tenTruyen = tenTruyen;
     }
 
     public String getLinkAnh() {
@@ -23,5 +25,13 @@ public class TruyenKhamPha {
 
     public void setLinkAnh(String linkAnh) {
         this.linkAnh = linkAnh;
+    }
+
+    public String getDetailURL() {
+        return detailURL;
+    }
+
+    public void setDetailURL(String detailURL) {
+        this.detailURL = detailURL;
     }
 }

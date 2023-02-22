@@ -9,7 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_4sdp">
+        android:background="@drawable/app_bar_kham_pha_bg">
         <SearchView
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
@@ -22,7 +22,6 @@
             android:id="@+id/tabDiscovery"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
             android:contentDescription="@string/tabDiscovery"
             android:labelFor="@id/tabDiscovery"
             app:tabGravity="center"

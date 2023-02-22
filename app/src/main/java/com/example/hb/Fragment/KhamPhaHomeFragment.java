@@ -6,8 +6,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +16,9 @@ import android.widget.Toast;
 
 import com.example.hb.Activities.ChapActivity;
 import com.example.hb.Adapter.KhamPhaTruyenAdapter;
-import com.example.hb.Api.ApiJSOUP;
+import com.example.hb.Api.ApiJsoupListTruyen;
 import com.example.hb.Interfaces.LayTruyenCV;
+import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.R;
 
 import java.util.ArrayList;
@@ -46,7 +45,7 @@ public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
         anhXa();
         setUp();
         setClick();
-        new ApiJSOUP(this).execute();
+        new ApiJsoupListTruyen(this).execute();
     }
 
     private void init(){
@@ -65,7 +64,11 @@ public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
         gdvKhamPha.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TruyenKhamPha truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
+                Bundle b = new Bundle();
+                b.putSerializable("truyen",truyenKhamPha);
                 Intent intent = new Intent(getActivity(), ChapActivity.class);
+                intent.putExtra("data",b);
                 startActivity(intent);
             }
         });

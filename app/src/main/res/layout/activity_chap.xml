@@ -15,7 +15,6 @@
         android:id="@+id/imgChap"
         android:layout_width="@dimen/_95sdp"
         android:layout_height="match_parent"
-        android:src="@drawable/cauthatainumadau"
         android:layout_alignParentStart="true"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +26,6 @@
             android:id="@+id/chapTenTruyen"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ten Truyen"
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             android:ellipsize="end"
@@ -36,7 +34,6 @@
             android:id="@+id/chapTenTacGia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ten Tac Gia"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             android:ellipsize="end"
@@ -45,7 +42,6 @@
             android:id="@+id/chapTrangThai"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trang Thai"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             android:ellipsize="end"
@@ -53,7 +49,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thể loại: Nguyên sang, Ngôn tình, Cổ đại , HE , Tình cảm , Tiên hiệp , Tu chân , Xuyên việt , Sinh con , Hài hước , Thị giác nữ chủ"
             android:id="@+id/chapTheLoai"
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
@@ -71,26 +66,10 @@
         android:textSize="@dimen/_13ssp"
         android:layout_marginStart="@dimen/_4sdp"
         android:padding="@dimen/_4sdp"
-        android:text="Bổn văn văn án:
-
-Lôi khanh đã chết, bất quá không vội, nàng được đến ba lần đi trước tiểu thế giới bám vào người người qua đường Giáp kéo dài sinh mệnh cơ hội.
-
-Tiền đề là nàng có thể vượt qua người qua đường Giáp tử kiếp.
-
-Nhưng mà tu chân thế giới thật sự quá nguy hiểm.
-
-Cái thứ nhất hào là rơi xuống đất thành hộp, thượng tuyến đã bị tạp đã chết!
-
-Cái thứ hai hào cùng người ký đạo lữ khế ước, kết quả mới vừa thiêm xong nàng liền lạnh.
-
-Chờ đến nàng lại lần nữa online, Tu Chân giới sớm đã cảnh còn người mất thương hải tang điền, từng nay đạo lữ cũng đã lạnh thấu!
-
-Bất quá cô nương đào hoa vượng, có cái ân cứu mạng muốn báo, lấy thân báo đáp không biết xấu hổ nửa năm sau, nàng vào nhầm một cái bí cảnh rốt cuộc thực chất tính sờ đến tu chân ngạch cửa, kết quả chờ nàng ra tới đạo lữ lại lạnh!
-
-Lôi khanh: Ta có một câu mmmp không biết có nên nói hay không."
         android:ellipsize="end"
         android:maxLines="8"/>
         <ListView
+            android:id="@+id/listChap"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
 </LinearLayout>

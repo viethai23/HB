@@ -39,9 +39,12 @@ public class ApiJSOUP extends AsyncTask<Void,Void,Void> {
                         .select("h5")
                         .eq(i)
                         .text();
-
-                KhamPharuyenArrayList.add(new TruyenKhamPha(tenTruyen,linkAnh));
-                Log.d("items"," img: " + linkAnh + " . title: " + tenTruyen);
+                String detailURL = data.select("div.cover.col")
+                        .select("a")
+                        .eq(i)
+                        .attr("href");
+                KhamPharuyenArrayList.add(new TruyenKhamPha(tenTruyen,linkAnh,detailURL));
+                Log.d("items"," img: " + linkAnh + " . title: " + tenTruyen + " . detail url: " + detailURL);
             }
         } catch (IOException e) {
             KhamPharuyenArrayList = null;

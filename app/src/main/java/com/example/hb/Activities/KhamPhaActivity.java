@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
+import android.widget.GridView;
 
 public class KhamPhaActivity extends AppCompatActivity {
     TabLayout tabLayout;
@@ -20,6 +21,7 @@ public class KhamPhaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kham_pha);
+
         tabLayout = findViewById(R.id.tabDiscovery);
         viewPager2 = findViewById(R.id.discoveryPager);
         tabLayout.addTab(tabLayout.newTab().setText("Trang chủ"));
@@ -47,5 +49,6 @@ public class KhamPhaActivity extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+
     }
 }

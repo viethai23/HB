@@ -1,17 +1,22 @@
 package com.example.hb.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
 
+import com.example.hb.Activities.ChapActivity;
 import com.example.hb.Adapter.KhamPhaTruyenAdapter;
 import com.example.hb.Api.ApiJSOUP;
 import com.example.hb.Interfaces.LayTruyenCV;
@@ -56,7 +61,16 @@ public class KhamPhaHomeFragment extends Fragment implements LayTruyenCV {
 
         gdvKhamPha.setAdapter(adapter);
     }
-    private void setClick(){}
+    private void setClick(){
+        gdvKhamPha.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ChapActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
 
     @Override
     public void batDauCV() {

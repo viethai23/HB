@@ -14,7 +14,7 @@
         android:theme="@style/Theme.HB"
         tools:targetApi="31">
         <activity
-            android:name=".ChapActivity"
+            android:name=".Activities.ChapActivity"
             android:exported="false" />
         <activity
             android:name=".Activities.KhamPhaActivity"

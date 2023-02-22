@@ -14,13 +14,13 @@
         android:theme="@style/Theme.HB"
         tools:targetApi="31">
         <activity
-            android:name=".Activities.CongDongActivity" />
+            android:name=".Activities.KhamPhaActivity"
+            android:exported="false" />
+        <activity android:name=".Activities.CongDongActivity" />
+        <activity android:name=".Activities.DangKyActivity" />
+        <activity android:name=".Activities.DangNhapActivity" />
         <activity
-            android:name=".Activities.DangKyActivity" />
-        <activity
-            android:name=".Activities.DangNhapActivity" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

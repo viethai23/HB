@@ -12,10 +12,10 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.example.hb.Adapter.TruyenAdapter;
+import com.example.hb.Adapter.KeSachTruyenAdapter;
 import com.example.hb.Api.ApiLayTruyen;
 import com.example.hb.Interfaces.LayTruyenVe;
-import com.example.hb.Object.Truyen;
+import com.example.hb.Object.TruyenKeSach;
 import com.example.hb.R;
 
 import org.json.JSONArray;
@@ -29,7 +29,7 @@ public class LibraryFragment extends Fragment implements LayTruyenVe {
 
     View view;
     GridView gdvListTruyen;
-    TruyenAdapter adapter;
+    KeSachTruyenAdapter adapter;
     ArrayList truyenArrayList;
 
     @Override
@@ -51,7 +51,7 @@ public class LibraryFragment extends Fragment implements LayTruyenVe {
     }
     private void init(){
         truyenArrayList = new ArrayList<>();
-        adapter = new TruyenAdapter(getActivity(),0,truyenArrayList);
+        adapter = new KeSachTruyenAdapter(getActivity(),0,truyenArrayList);
     }
     private void anhXa(){
 
@@ -76,12 +76,11 @@ public class LibraryFragment extends Fragment implements LayTruyenVe {
             JSONArray arr = new JSONArray(temp.getString("record"));
             for(int i=0;i<arr.length();i++){
                 JSONObject o = arr.getJSONObject(i);
-                truyenArrayList.add(new Truyen(o));
+                truyenArrayList.add(new TruyenKeSach(o));
             }
-            adapter = new TruyenAdapter(getActivity(),0,truyenArrayList);
+            adapter = new KeSachTruyenAdapter(getActivity(),0,truyenArrayList);
             gdvListTruyen.setAdapter(adapter);
         }catch (JSONException e){
-
         }
     }
 

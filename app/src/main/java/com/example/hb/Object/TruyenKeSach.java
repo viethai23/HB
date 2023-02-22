@@ -3,10 +3,10 @@ package com.example.hb.Object;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class Truyen {
+public class TruyenKeSach {
     private String tenTruyen,tenChap,linkAnh;
 
-    public Truyen(){
+    public TruyenKeSach(){
     }
 /*
 {
@@ -15,13 +15,13 @@ public class Truyen {
 "linkAnh":""
 }
  */
-    public Truyen(JSONObject o) throws JSONException{
+    public TruyenKeSach(JSONObject o) throws JSONException{
         tenTruyen = o.getString("tenTruyen");
         tenChap = o.getString("tenChap");
         linkAnh = o.getString("linkAnh");
     }
 
-    public Truyen(String tenTruyen, String tenChap, String linkAnh) {
+    public TruyenKeSach(String tenTruyen, String tenChap, String linkAnh) {
         this.tenTruyen = tenTruyen;
         this.tenChap = tenChap;
         this.linkAnh = linkAnh;

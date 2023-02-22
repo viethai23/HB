@@ -11,13 +11,6 @@ import com.example.hb.Fragment.LibraryFragment;
 import com.example.hb.Fragment.ReadHistoryFragment;
 
 public class BookshelfFragmentAdapter extends FragmentStateAdapter {
-    public BookshelfFragmentAdapter(@NonNull FragmentActivity fragmentActivity) {
-        super(fragmentActivity);
-    }
-
-    public BookshelfFragmentAdapter(@NonNull Fragment fragment) {
-        super(fragment);
-    }
 
     public BookshelfFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);

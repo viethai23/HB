@@ -13,18 +13,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.hb.Object.Truyen;
+import com.example.hb.Object.TruyenKeSach;
 import com.example.hb.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TruyenAdapter extends ArrayAdapter<Truyen> {
+public class KeSachTruyenAdapter extends ArrayAdapter<TruyenKeSach> {
 
     private Context ct;
-    private ArrayList<Truyen> arr;
+    private ArrayList<TruyenKeSach> arr;
 
-    public TruyenAdapter(@NonNull FragmentActivity context, int resource, @NonNull List<Truyen> objects) {
+    public KeSachTruyenAdapter(@NonNull FragmentActivity context, int resource, @NonNull List<TruyenKeSach> objects) {
         super(context, resource, objects);
         this.ct = context;
         this.arr = new ArrayList<>(objects);
@@ -36,10 +36,10 @@ public class TruyenAdapter extends ArrayAdapter<Truyen> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater) ct.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView =  inflater.inflate(R.layout.item_truyen,null);
+            convertView =  inflater.inflate(R.layout.item_truyen_ke_sach,null);
         }
         if(arr.size()>0){
-            Truyen truyen = this.arr.get(position);
+            TruyenKeSach truyen = this.arr.get(position);
             TextView tenTenTruyen = convertView.findViewById(R.id.txvTenTruyen);
             TextView tenTenChap = convertView.findViewById(R.id.txvtenChap);
             ImageView imgAnhTruyen = convertView.findViewById(R.id.imgAnhTruyen);

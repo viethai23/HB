@@ -57,4 +57,8 @@ dependencies {
     implementation 'androidx.multidex:multidex:2.0.1'
     //okhttp
     implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    //Image catching Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+    //HTML Parser Jsoup
+    implementation 'org.jsoup:jsoup:1.15.4'
 }

@@ -41,18 +41,18 @@ public class ApiJsoupContentTruyenNovelFull extends AsyncTask<Void,Void,Void> {
             String linkAnh = "https://novelfull.top"+doc.select("div.book").select("img").attr("src");
             String tenTruyen = doc.select("h3.title").text();
             Log.d("link anh",linkAnh);
-            data = new TruyenKhamPhaTruyen(linkAnh,tenTruyen,tenTacGia,theLoai,trangThai,gioiThieu);
-            Elements content = doc.select("ul.list-chapter").select("span.chapter-text");
+            data = new TruyenKhamPhaTruyen(linkAnh,tenTacGia,theLoai,trangThai,gioiThieu);
+            Elements content = doc.select("ul.list-chapter").select("a");
             int listChapsize = content.size();
             for(int i=0;i<listChapsize;i++) {
-                String tenChap = content
+                String tenChap = content.select("span.chapter-text")
                         .eq(i)
                         .text();
                 String chapUrl = content
                         .eq(i)
                         .attr("href");
                 arrChapters.add(new ChapTruyen(tenChap, chapUrl));
-                Log.d("truyen chap", " .ten chap: " + tenChap + " .chapUrl: " + chapUrl);
+                //Log.d("truyen chap", " .ten chap: " + tenChap + " .chapUrl: " + chapUrl);
             }
         }catch (IOException e){
 

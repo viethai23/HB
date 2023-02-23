@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
     LayTruyenCV layTruyenCV;
-    ArrayList<TruyenKhamPha> KhamPharuyenArrayList = new ArrayList<>();
+    ArrayList<TruyenKhamPha> KhamPhaTruyenArrayList = new ArrayList<>();
 
     public ApiJsoupListNovelFull(LayTruyenCV layTruyenCV) {
         this.layTruyenCV = layTruyenCV;
@@ -38,25 +38,26 @@ public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
                         .select("h3")
                         .eq(i)
                         .text();
-                String detailURL = "https://novelfull.top" + data
-                        .select("a")
+                String detailURL = "https://novelfull.top" + data.select("h3")
                         .eq(i)
+                        .select("a")
                         .attr("href");
-                KhamPharuyenArrayList.add(new TruyenKhamPha(tenTruyen,linkAnh,detailURL));
+                KhamPhaTruyenArrayList.add(new TruyenKhamPha(tenTruyen,linkAnh,detailURL));
                 Log.d("items"," img: " + linkAnh + " . title: " + tenTruyen + " . detail url: " + detailURL);
             }
         } catch (IOException e) {
-            KhamPharuyenArrayList = null;
+            KhamPhaTruyenArrayList = null;
         }
         return null;
     }
 
     @Override
     protected void onPostExecute(Void unused) {
-        if(KhamPharuyenArrayList==null){
+        if(KhamPhaTruyenArrayList==null){
             this.layTruyenCV.biLoiCV();
         }else{
-            this.layTruyenCV.ketThucCV(KhamPharuyenArrayList);
+            Log.d("array", String.valueOf(KhamPhaTruyenArrayList));
+            this.layTruyenCV.ketThucCV(KhamPhaTruyenArrayList);
         }
     }
 }

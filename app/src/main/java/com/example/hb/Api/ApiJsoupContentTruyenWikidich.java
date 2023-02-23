@@ -30,6 +30,8 @@ public class ApiJsoupContentTruyenWikidich extends AsyncTask<Void,Void,Void> {
         try{
             Document doc = Jsoup.connect(url).get();
             Elements generalContent = doc.select("div.cover-info").select("p");
+            String linkAnh = doc.select("div.cover-wrapper").select("img").attr("src");
+            String tenTruyen = generalContent.select("h2").text();
             String tenTacGia = "Tác giả: " + generalContent.eq(2).select("a").text();
             String trangThai = "Tình Trạng: "+ generalContent.eq(3).select("a").text();
             Elements description = doc.select("div.book-desc").select("a");
@@ -59,7 +61,7 @@ public class ApiJsoupContentTruyenWikidich extends AsyncTask<Void,Void,Void> {
             for(int i=0;i<sizeDes;i++){
                 gioiThieu+=des.text()+". ";
             }
-            //data = new TruyenKhamPhaTruyen(tenTacGia,trangThai,theLoai,gioiThieu);
+            data = new TruyenKhamPhaTruyen(linkAnh,tenTruyen,tenTacGia,trangThai,theLoai,gioiThieu);
 
             Log.d("content:",tenTacGia+". " + trangThai +". " +theLoai + ". "+gioiThieu);
 

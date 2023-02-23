@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,12 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
     private void setClick(){
         gdvNovelFull.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
                 TruyenKhamPha truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
                 Bundle b = new Bundle();
-                b.putSerializable("truyen",truyenKhamPha);
+                b.putSerializable("truyen novelfull",truyenKhamPha);
                 Intent intent = new Intent(getActivity(), ChapActivity.class);
-                intent.putExtra("data",b);
+                intent.putExtra("data novelfull",b);
                 startActivity(intent);
             }
         });

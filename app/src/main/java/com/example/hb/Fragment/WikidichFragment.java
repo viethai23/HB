@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,10 +67,11 @@ public class WikidichFragment extends Fragment implements LayTruyenCV {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TruyenKhamPha truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
                 Bundle b = new Bundle();
-                b.putSerializable("truyen",truyenKhamPha);
+                Log.d("link=post: ",truyenKhamPha.getDetailURL());
+                b.putSerializable("truyen wiki",truyenKhamPha.getDetailURL());
                 Intent intent = new Intent(getActivity(), ChapActivity.class);
-                intent.putExtra("data",b);
-                startActivity(intent);
+                intent.putExtra("data wiki",b);
+                //startActivity(intent);
             }
         });
     }

@@ -32,6 +32,8 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     ListView listChap;
     ArrayList<ChapTruyen> arrChap;
     ChapTruyenItemAdapter adapter;
+    TruyenKhamPha truyenNovelfull,truyenWiki;
+    String linkTruyenWiki, linkTruyenNovelfull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,22 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
         anhXa();
         setUp();
         setClick();
-        //new ApiJsoupContentTruyenWikidich((LayGioiThieuTruyen) this, truyenKhamPha.getDetailURL()).execute();
-        new ApiJsoupContentTruyenNovelFull(this,truyenKhamPha.getDetailURL()).execute();
+        if(linkTruyenWiki!=null){
+            new ApiJsoupContentTruyenWikidich(this, linkTruyenWiki).execute();
+        }
+        if(linkTruyenNovelfull!=null){
+            new ApiJsoupContentTruyenNovelFull(this, linkTruyenNovelfull).execute();
+        }
     }
 
     private void init() {
-        Bundle b = getIntent().getBundleExtra("data");
-        truyenKhamPha = (TruyenKhamPha) b.getSerializable("truyen");
+
+//        Bundle b = getIntent().getBundleExtra("data wiki");
+//        truyenWiki = (TruyenKhamPha) b.getSerializable("truyen wiki");
+//        linkTruyenWiki = (String) truyenWiki.getDetailURL();
+        Bundle c = getIntent().getBundleExtra("data novelfull");
+        truyenNovelfull = (TruyenKhamPha) c.getSerializable("truyen novelfull");
+        linkTruyenNovelfull = (String) truyenNovelfull.getDetailURL();
 
         arrChap = new ArrayList<>();
         adapter = new ChapTruyenItemAdapter(this, 0, arrChap);
@@ -64,6 +75,7 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     }
 
     private void setUp() {
+        chapTenTruyen.setText(truyenNovelfull.getTenTruyen());
         listChap.setAdapter(adapter);
     }
 
@@ -81,7 +93,6 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
         chapTrangThai.setText(truyen.getTrangThai());
         chapTheLoai.setText(truyen.getTheLoai());
         chapGioiThieu.setText(truyen.getGioiThieu());
-        chapTenTruyen.setText(truyen.getTenTruyen());
         Glide.with(this).load(truyen.getLinkAnh()).into(imgChap);
         arrChap.clear();
         arrChap = data2;

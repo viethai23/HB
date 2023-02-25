@@ -48,11 +48,11 @@ public class ApiJsoupContentTruyenNovelFull extends AsyncTask<Void,Void,Void> {
                 String tenChap = content.select("span.chapter-text")
                         .eq(i)
                         .text();
-                String chapUrl = content
+                String chapUrl = "https://novelfull.top"+content
                         .eq(i)
                         .attr("href");
                 arrChapters.add(new ChapTruyen(tenChap, chapUrl));
-                //Log.d("truyen chap", " .ten chap: " + tenChap + " .chapUrl: " + chapUrl);
+                Log.d("truyen chap", " .ten chap: " + tenChap + " .chapUrl: " + chapUrl);
             }
         }catch (IOException e){
 

@@ -61,7 +61,7 @@ public class ApiJsoupContentTruyenWikidich extends AsyncTask<Void,Void,Void> {
             for(int i=0;i<sizeDes;i++){
                 gioiThieu+=des.text()+". ";
             }
-            data = new TruyenKhamPhaTruyen(linkAnh,tenTruyen,tenTacGia,trangThai,theLoai,gioiThieu);
+            data = new TruyenKhamPhaTruyen(linkAnh,tenTacGia,trangThai,theLoai,gioiThieu);
 
             Log.d("content:",tenTacGia+". " + trangThai +". " +theLoai + ". "+gioiThieu);
 

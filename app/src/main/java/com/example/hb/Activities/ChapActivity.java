@@ -2,7 +2,10 @@ package com.example.hb.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,7 +33,7 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     TextView chapTheLoai;
     TextView chapGioiThieu;
     ListView listChap;
-    ArrayList<ChapTruyen> arrChap;
+    public static ArrayList<ChapTruyen> arrChap;
     ChapTruyenItemAdapter adapter;
     TruyenKhamPha truyenNovelfull,truyenWiki;
     String linkTruyenWiki, linkTruyenNovelfull;
@@ -80,6 +83,16 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     }
 
     private void setClick() {
+        listChap.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Bundle b = new Bundle();
+                b.putSerializable("chap post",position);
+                Intent intent = new Intent(ChapActivity.this,ReadingChapActivity.class);
+                intent.putExtra("data chap",b);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -1,6 +1,8 @@
 package com.example.hb.Object;
 
-public class ChapTruyen {
+import java.io.Serializable;
+
+public class ChapTruyen implements Serializable {
     private String tenChap,linkChap;
 
     public ChapTruyen(String tenChap,String linkChap) {

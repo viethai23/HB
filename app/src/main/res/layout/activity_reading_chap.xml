@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ReadingChapActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:fontFamily="@font/roboto_bold"
+            android:id="@+id/readTenChap"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40ssp"
+            android:padding="@dimen/_4sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18ssp"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:maxLines="2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/_40ssp"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_4sdp">
+
+        <TextView
+            android:fontFamily="@font/roboto_medium"
+            android:id="@+id/readContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_4sdp"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/_28sdp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:id="@+id/btnPrevChapter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_weight="1"
+            android:background="@drawable/black_border_bg"/>
+        <ImageView
+            android:id="@+id/btnNextChapter"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_arrow_forward"
+            android:layout_weight="1"
+            android:background="@drawable/black_border_bg"/>
+    </LinearLayout>
+</RelativeLayout>

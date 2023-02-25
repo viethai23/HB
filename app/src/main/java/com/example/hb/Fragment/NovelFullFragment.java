@@ -32,6 +32,7 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
     GridView gdvNovelFull;
     NovelfullAdapter adapter;
     ArrayList khamPhaTruyenArrayList;
+    public static TruyenKhamPha truyenKhamPha;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,7 +67,7 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
         gdvNovelFull.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
-                TruyenKhamPha truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
+                truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
                 Bundle b = new Bundle();
                 b.putSerializable("truyen novelfull",truyenKhamPha);
                 Intent intent = new Intent(getActivity(), ChapActivity.class);

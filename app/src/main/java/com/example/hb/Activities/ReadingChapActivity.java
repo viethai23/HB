@@ -12,9 +12,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hb.Api.ApiJsoupContentChap;
+import com.example.hb.Fragment.NovelFullFragment;
 import com.example.hb.Interfaces.LayTruyenVe;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.Serializable;
 
@@ -22,6 +24,7 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
     TextView tenChap,contentChap;
     ImageView btnNextChap,btnPrevChap;
     ChapTruyen chapTruyen;
+    FloatingActionButton btnBack;
     int chapPost;
 
     @Override
@@ -51,6 +54,7 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
         contentChap = findViewById(R.id.readContent);
         btnNextChap = findViewById(R.id.btnNextChapter);
         btnPrevChap = findViewById(R.id.btnPrevChapter);
+        btnBack = findViewById(R.id.backContent);
     }
     private void setClick(){
         btnPrevChap.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +77,16 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
                     chapPost+=1;
                     newStart();
                 }
+            }
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ReadingChapActivity.this,ChapActivity.class);
+                Bundle b = new Bundle();
+                b.putSerializable("truyen novelfull", NovelFullFragment.truyenKhamPha);
+                intent.putExtra("data novelfull",b);
+                startActivity(intent);
             }
         });
     }

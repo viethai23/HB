@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".Activities.ReadingChapActivity"
     android:orientation="vertical">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginLeft="@dimen/_3sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:id="@+id/backContent"
+        app:rippleColor="@null"
+        app:backgroundTint="@color/white"
+        app:fabSize="mini"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +32,7 @@
             android:textSize="@dimen/_18ssp"
             android:textAlignment="center"
             android:ellipsize="end"
-            android:maxLines="2"/>
+            android:maxLines="1"/>
     </LinearLayout>
 
     <LinearLayout

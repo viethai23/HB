@@ -24,8 +24,8 @@ public class KhamPhaActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tabDiscovery);
         viewPager2 = findViewById(R.id.discoveryPager);
-        tabLayout.addTab(tabLayout.newTab().setText("Wikidich"));
-        tabLayout.addTab(tabLayout.newTab().setText("NovelFull"));
+        tabLayout.addTab(tabLayout.newTab().setText("Lastest Release"));
+        tabLayout.addTab(tabLayout.newTab().setText("Hot Novel"));
         discoveryFragmentAdapter = new DiscoveryFragmentAdapter(fragmentManager,getLifecycle());
         viewPager2.setAdapter(discoveryFragmentAdapter);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

@@ -18,29 +18,31 @@ import android.widget.Toast;
 import com.example.hb.Activities.ChapActivity;
 import com.example.hb.Adapter.NovelfullAdapter;
 import com.example.hb.Adapter.WikidichAdapter;
-import com.example.hb.Api.ApiJsoupListNovelFull;
 import com.example.hb.Api.ApiJsoupListWikidich;
+import com.example.hb.Api.ApiListNovelFullLastestRelease;
 import com.example.hb.Interfaces.LayTruyenCV;
 import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.R;
 
 import java.util.ArrayList;
 
-public class NovelFullFragment extends Fragment implements LayTruyenCV {
+public class LastestReleaseFragment extends Fragment implements LayTruyenCV {
 
     View view;
-    GridView gdvNovelFull;
+    GridView gdvLatestRelease;
     NovelfullAdapter adapter;
     ArrayList khamPhaTruyenArrayList;
     public static TruyenKhamPha truyenKhamPha;
+    String url ="https://novelfull.com/latest-release-novel";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_novel_full, container, false);
+        view = inflater.inflate(R.layout.fragment_lastest_release, container, false);
         return view;
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -48,9 +50,8 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
         anhXa();
         setUp();
         setClick();
-        new ApiJsoupListNovelFull(this).execute();
+        new ApiListNovelFullLastestRelease(this,url).execute();
     }
-
 
     private void init(){
         khamPhaTruyenArrayList = new ArrayList<>();
@@ -58,16 +59,16 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
     }
     private void anhXa(){
 
-        gdvNovelFull = view.findViewById(R.id.gdvNovelFull);
+        gdvLatestRelease = view.findViewById(R.id.gdvLastestRelease);
     }
     private void setUp(){
 
-        gdvNovelFull.setAdapter(adapter);
+        gdvLatestRelease.setAdapter(adapter);
     }
     private void setClick(){
-        gdvNovelFull.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gdvLatestRelease.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view,int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 truyenKhamPha = (TruyenKhamPha) khamPhaTruyenArrayList.get(position);
                 Bundle b = new Bundle();
                 b.putSerializable("truyen novelfull",truyenKhamPha);
@@ -89,7 +90,7 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
         khamPhaTruyenArrayList.clear();
         khamPhaTruyenArrayList.addAll(data);
         adapter = new NovelfullAdapter(getActivity(),0,khamPhaTruyenArrayList);
-        gdvNovelFull.setAdapter(adapter);
+        gdvLatestRelease.setAdapter(adapter);
     }
 
     @Override

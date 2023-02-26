@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hb.Api.ApiJsoupContentChap;
-import com.example.hb.Fragment.NovelFullFragment;
+import com.example.hb.Fragment.HotNovelFragment;
 import com.example.hb.Interfaces.LayTruyenVe;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.R;
@@ -83,9 +83,7 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ReadingChapActivity.this,ChapActivity.class);
-                Bundle b = new Bundle();
-                b.putSerializable("truyen novelfull", NovelFullFragment.truyenKhamPha);
-                intent.putExtra("data novelfull",b);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }
         });

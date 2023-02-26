@@ -45,7 +45,7 @@ public class ApiJsoupContentTruyenNovelFull extends AsyncTask<Void,Void,Void> {
                 for(int i=0;i<size;i++){
                     gioiThieu+=descText.eq(i).text();
                 }
-                String linkAnh = "https://novelfull.top"+doc.select("div.book").select("img").attr("src");
+                String linkAnh = "https://novelfull.com"+doc.select("div.book").select("img").attr("src");
                 String tenTruyen = doc.select("h3.title").text();
                 Log.d("link anh",linkAnh);
                 data = new TruyenKhamPhaTruyen(linkAnh,tenTacGia,theLoai,trangThai,gioiThieu);

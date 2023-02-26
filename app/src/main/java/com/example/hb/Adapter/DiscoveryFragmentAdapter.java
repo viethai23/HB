@@ -6,8 +6,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.hb.Fragment.NovelFullFragment;
-import com.example.hb.Fragment.WikidichFragment;
+import com.example.hb.Fragment.HotNovelFragment;
+import com.example.hb.Fragment.LastestReleaseFragment;
 
 public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
     public DiscoveryFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
@@ -18,9 +18,9 @@ public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if(position==1){
-            return new NovelFullFragment();
+            return new HotNovelFragment();
         }
-        return new WikidichFragment();
+        return new LastestReleaseFragment();
     }
 
     @Override

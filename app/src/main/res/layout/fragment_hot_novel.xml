@@ -3,10 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.WikidichFragment">
+    tools:context=".Fragment.HotNovelFragment">
 
     <GridView
-        android:id="@+id/gdvWikidich"
+        android:id="@+id/gdvNovelFull"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="4">

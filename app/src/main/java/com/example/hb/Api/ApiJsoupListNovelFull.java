@@ -16,10 +16,11 @@ import java.util.ArrayList;
 public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
     private LayTruyenCV layTruyenCV;
     private ArrayList<TruyenKhamPha> KhamPhaTruyenArrayList = new ArrayList<>();
-    private String url = "https://novelfull.top/index.php/hot-novel";
+    private String url;
     private int page=0,lastP;
 
-    public ApiJsoupListNovelFull(LayTruyenCV layTruyenCV) {
+    public ApiJsoupListNovelFull(LayTruyenCV layTruyenCV,String url) {
+        this.url = url;
         this.layTruyenCV = layTruyenCV;
         this.layTruyenCV.batDauCV();
     }

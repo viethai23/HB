@@ -38,6 +38,16 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     String linkTruyenNovelfull;
 
     @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chap);

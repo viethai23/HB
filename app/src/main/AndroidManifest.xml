@@ -18,7 +18,8 @@
             android:exported="false" />
         <activity
             android:name=".Activities.ChapActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="keyboardHidden|orientation"/>
         <activity
             android:name=".Activities.KhamPhaActivity"
             android:exported="false" />

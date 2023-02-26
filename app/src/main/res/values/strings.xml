@@ -17,4 +17,5 @@
     <string name="confirm_password">Nhập lại mật khẩu</string>
     <string name="dang_nhap">Đăng nhập</string>
     <string name="create_new_account">Bạn chưa có tài khoản?</string>
+    <string name="type_a_comment">Nhập bình luận của bạn</string>
 </resources>

@@ -14,7 +14,6 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.hb.Adapter.ChapTruyenItemAdapter;
 import com.example.hb.Api.ApiJsoupContentTruyenNovelFull;
-import com.example.hb.Api.ApiJsoupContentTruyenWikidich;
 import com.example.hb.Interfaces.LayGioiThieuTruyen;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.Object.TruyenKhamPha;
@@ -35,8 +34,8 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     ListView listChap;
     public static ArrayList<ChapTruyen> arrChap;
     ChapTruyenItemAdapter adapter;
-    TruyenKhamPha truyenNovelfull,truyenWiki;
-    String linkTruyenWiki, linkTruyenNovelfull;
+    TruyenKhamPha truyenNovelfull;
+    String linkTruyenNovelfull;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,19 +45,11 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
         anhXa();
         setUp();
         setClick();
-        if(linkTruyenWiki!=null){
-            new ApiJsoupContentTruyenWikidich(this, linkTruyenWiki).execute();
-        }
-        if(linkTruyenNovelfull!=null){
-            new ApiJsoupContentTruyenNovelFull(this, linkTruyenNovelfull).execute();
-        }
+        new ApiJsoupContentTruyenNovelFull(this, linkTruyenNovelfull).execute();
     }
 
     private void init() {
 
-//        Bundle b = getIntent().getBundleExtra("data wiki");
-//        truyenWiki = (TruyenKhamPha) b.getSerializable("truyen wiki");
-//        linkTruyenWiki = (String) truyenWiki.getDetailURL();
         Bundle c = getIntent().getBundleExtra("data novelfull");
         truyenNovelfull = (TruyenKhamPha) c.getSerializable("truyen novelfull");
         linkTruyenNovelfull = (String) truyenNovelfull.getDetailURL();

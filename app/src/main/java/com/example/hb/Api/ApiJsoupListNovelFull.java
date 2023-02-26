@@ -14,8 +14,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
-    LayTruyenCV layTruyenCV;
-    ArrayList<TruyenKhamPha> KhamPhaTruyenArrayList = new ArrayList<>();
+    private LayTruyenCV layTruyenCV;
+    private ArrayList<TruyenKhamPha> KhamPhaTruyenArrayList = new ArrayList<>();
+    private String url = "https://novelfull.top/index.php/hot-novel";
+    private int page=0,lastP;
 
     public ApiJsoupListNovelFull(LayTruyenCV layTruyenCV) {
         this.layTruyenCV = layTruyenCV;
@@ -25,25 +27,31 @@ public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
     @Override
     protected Void doInBackground(Void... voids) {
         try{
-            String urlNovelFull = "https://novelfull.top/index.php/hot-novel";
-            Document doc = Jsoup.connect(urlNovelFull).get();
-            Elements data = doc.select("div.col-truyen-main").select("div.row");
-            int size = data.size();
-            for(int i=0;i<size;i++){
-                String linkAnh = "https://novelfull.top" + data
-                        .select("img")
-                        .eq(i)
-                        .attr("src");
-                String tenTruyen = data
-                        .select("h3")
-                        .eq(i)
-                        .text();
-                String detailURL = "https://novelfull.top" + data.select("h3")
-                        .eq(i)
-                        .select("a")
-                        .attr("href");
-                KhamPhaTruyenArrayList.add(new TruyenKhamPha(tenTruyen,linkAnh,detailURL));
-                Log.d("items"," img: " + linkAnh + " . title: " + tenTruyen + " . detail url: " + detailURL);
+            Document maindoc = Jsoup.connect(url).get();
+            String lastPage = maindoc.select("li.last").select("a").attr("href");
+            lastP = Integer.parseInt(lastPage.substring(lastPage.length()-1));
+            while (page<lastP){
+                page+=1;
+                String currentPage= url + "?page="+Integer.toString(page);
+                Document doc = Jsoup.connect(currentPage).get();
+                Elements data = doc.select("div.col-truyen-main").select("div.row");
+                int size = data.size();
+                for(int i=0;i<size;i++) {
+                    String linkAnh = "https://novelfull.top" + data
+                            .select("img")
+                            .eq(i)
+                            .attr("src");
+                    String tenTruyen = data
+                            .select("h3")
+                            .eq(i)
+                            .text();
+                    String detailURL = "https://novelfull.top" + data.select("h3")
+                            .eq(i)
+                            .select("a")
+                            .attr("href");
+                    KhamPhaTruyenArrayList.add(new TruyenKhamPha(tenTruyen, linkAnh, detailURL));
+                    Log.d("items", " img: " + linkAnh + " . title: " + tenTruyen + " . detail url: " + detailURL);
+                }
             }
         } catch (IOException e) {
             KhamPhaTruyenArrayList = null;
@@ -56,8 +64,9 @@ public class ApiJsoupListNovelFull extends AsyncTask<Void,Void,Void> {
         if(KhamPhaTruyenArrayList==null){
             this.layTruyenCV.biLoiCV();
         }else{
-            Log.d("array", String.valueOf(KhamPhaTruyenArrayList));
+            Log.d("array", String.valueOf(KhamPhaTruyenArrayList.size()));
             this.layTruyenCV.ketThucCV(KhamPhaTruyenArrayList);
         }
     }
 }
+

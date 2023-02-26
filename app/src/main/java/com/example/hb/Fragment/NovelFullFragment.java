@@ -51,6 +51,7 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
         new ApiJsoupListNovelFull(this).execute();
     }
 
+
     private void init(){
         khamPhaTruyenArrayList = new ArrayList<>();
         adapter = new NovelfullAdapter(getActivity(),0,khamPhaTruyenArrayList);
@@ -86,7 +87,7 @@ public class NovelFullFragment extends Fragment implements LayTruyenCV {
     @Override
     public void ketThucCV(ArrayList data) {
         khamPhaTruyenArrayList.clear();
-        khamPhaTruyenArrayList = data;
+        khamPhaTruyenArrayList.addAll(data);
         adapter = new NovelfullAdapter(getActivity(),0,khamPhaTruyenArrayList);
         gdvNovelFull.setAdapter(adapter);
     }

@@ -17,6 +17,21 @@
     <string name="confirm_password">Nhập lại mật khẩu</string>
     <string name="dang_nhap">Đăng nhập</string>
     <string name="create_new_account">Bạn chưa có tài khoản?</string>
+    <string name="type_a_comment">Nhập bình luận của bạn</string>
+    <string name="dang_xuat">Đăng xuất</string>
+    <string name="chu_de_toi">Chủ đề tối</string>
+    <string name="ngon_ngu">Ngôn ngữ</string>
+    <string name="tu_dong_mo_truyen">Tự động mở truyện vừa đọc</string>
+    <string name="chuyen_trang_bang_am_luong">Chuyển trang bằng phím âm lượng</string>
+    <string name="huong_dan">Hướng dẫn sử dụng</string>
+    <string name="co_chu">Cỡ chữ</string>
+    <string name="phong_chu">Phông chữ</string>
+    <string name="ket_noi">Kết nối với chúng tôi</string>
+    <string name="ca_nhan">Cá nhân</string>
+    <string name="ung_dung">Ứng dụng</string>
+    <string name="facebook">Facebook</string>
+    <string name="instagram">Instagram</string>
+    <string name="twitter">Twitter</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tabDiscovery">Discovery</string>

@@ -1,4 +1,4 @@
-package com.example.hb.Activities;
+package com.example.hb;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +8,10 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.example.hb.Activities.CaNhanActivity;
+import com.example.hb.Activities.CongDongActivity;
 import com.example.hb.Adapter.BookshelfFragmentAdapter;
 import com.example.hb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -74,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this,KhamPhaActivity.class));
                         break;
                     case R.id.action_canhan:
+                        startActivity(new Intent(MainActivity.this, CaNhanActivity.class));
                         break;
                     default:
                 }

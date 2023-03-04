@@ -22,7 +22,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.hb.MainActivity;
+import com.example.hb.Activities.MainActivity;
 import com.example.hb.R;
 import com.example.hb.databinding.ActivityDangKyBinding;
 import com.google.android.gms.tasks.OnCompleteListener;

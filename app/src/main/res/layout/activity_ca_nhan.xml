@@ -227,7 +227,7 @@
                     android:id="@+id/imageview4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_nightmode"
+                    android:src="@drawable/ic_save"
                     android:padding="@dimen/_13sdp"/>
 
                 <TextView

@@ -40,8 +40,10 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
     @Override
     public void onBindViewHolder(@NonNull CommentViewHolder holder, int position) {
-        Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
-//        holder.img_user.setImageResource(R.drawable.anime_avt);
+        if(mData.get(position).getUimg() != null)
+            Glide.with(mContext).load(mData.get(position).getUimg()).into(holder.img_user);
+        else
+            holder.img_user.setImageResource(R.drawable.anime_avt);
         holder.u_name.setText(mData.get(position).getUname());
         holder.u_comment.setText(mData.get(position).getContent());
         holder.u_date.setText(timestampToString((Long) mData.get(position).getTimestamp()));

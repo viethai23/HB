@@ -15,7 +15,7 @@
             android:name=".Activities.CaNhanActivity"/>
         <activity
             android:name=".Activities.CongDongActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity android:name=".Activities.DangKyActivity" />
         <activity android:name=".Activities.DangNhapActivity" />
         <activity
@@ -28,9 +28,6 @@
         <activity
             android:name=".Activities.KhamPhaActivity"
             android:exported="false" />
-        <activity android:name=".Activities.CongDongActivity" />
-        <activity android:name=".Activities.DangKyActivity" />
-        <activity android:name=".Activities.DangNhapActivity" />
         <activity
             android:name=".Activities.MainActivity"
             android:exported="true">

@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.hb.Adapter.CommentAdapter;
-import com.example.hb.MainActivity;
+import com.example.hb.Activities.MainActivity;
 import com.example.hb.Model.Comment;
 import com.example.hb.databinding.ActivityCongDongBinding;
 import com.google.android.gms.tasks.OnFailureListener;

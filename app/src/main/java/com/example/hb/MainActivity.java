@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.hb.Activities.CaNhanActivity;
 import com.example.hb.Activities.CongDongActivity;
 import com.example.hb.Adapter.BookshelfFragmentAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -69,10 +70,12 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, CongDongActivity.class));
                         break;
                     case R.id.action_kesach:
+
                         break;
                     case R.id.action_khampha:
                         break;
                     case R.id.action_canhan:
+                        startActivity(new Intent(MainActivity.this, CaNhanActivity.class));
                         break;
                     default:
                 }

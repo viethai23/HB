@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HB"
         tools:targetApi="31">
-        <activity android:name=".Activities.CongDongActivity"
-            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".Activities.CaNhanActivity"/>
+        <activity
+            android:name=".Activities.CongDongActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name=".Activities.DangKyActivity" />
         <activity android:name=".Activities.DangNhapActivity" />
         <activity
@@ -28,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -14,10 +15,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.hb.Adapter.ChapTruyenItemAdapter;
 import com.example.hb.Api.ApiJsoupContentTruyenNovelFull;
+import com.example.hb.Fragment.ReadHistoryFragment;
 import com.example.hb.Interfaces.LayGioiThieuTruyen;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.Object.TruyenKhamPhaTruyen;
+import com.example.hb.Object.TruyenLichSu;
 import com.example.hb.R;
 
 import java.io.Serializable;
@@ -36,6 +39,7 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     ChapTruyenItemAdapter adapter;
     TruyenKhamPha truyenNovelfull;
     String linkTruyenNovelfull;
+    TruyenKhamPhaTruyen truyen;
 
     @Override
     protected void onStart() {
@@ -91,6 +95,16 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
                 b.putSerializable("chap post",position);
                 Intent intent = new Intent(ChapActivity.this,ReadingChapActivity.class);
                 intent.putExtra("data chap",b);
+                TruyenLichSu truyenls = new TruyenLichSu(arrChap,truyen,position,truyenNovelfull.getTenTruyen());
+                boolean check = false;
+                for(TruyenLichSu i:ReadHistoryFragment.listTruyen) {
+                    if(truyenls.equals(i)){
+                        i.setCurrentChap(position);
+                        check = true;
+                    }
+                }
+                if(!check) ReadHistoryFragment.listTruyen.add(truyenls);
+                Log.d("list truyen:", String.valueOf(ReadHistoryFragment.listTruyen.size()));
                 startActivity(intent);
             }
         });
@@ -102,7 +116,7 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
     }
     @Override
     public void ketThuc(TruyenKhamPhaTruyen data,ArrayList data2) {
-        TruyenKhamPhaTruyen truyen = data;
+        truyen = data;
         chapTenTacGia.setText(truyen.getTenTacGia());
         chapTrangThai.setText(truyen.getTrangThai());
         chapTheLoai.setText(truyen.getTheLoai());

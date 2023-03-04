@@ -60,4 +60,17 @@ dependencies {
 
     // MultiDex
     implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
+
+    //okhttp
+    implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    //Image catching Picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+    //HTML Parser Jsoup
+    implementation 'org.jsoup:jsoup:1.15.4'
 }

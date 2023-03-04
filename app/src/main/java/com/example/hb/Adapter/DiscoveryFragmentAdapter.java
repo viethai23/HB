@@ -2,17 +2,15 @@ package com.example.hb.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.hb.Fragment.LibraryFragment;
-import com.example.hb.Fragment.ReadHistoryFragment;
+import com.example.hb.Fragment.HotNovelFragment;
+import com.example.hb.Fragment.LastestReleaseFragment;
 
-public class BookshelfFragmentAdapter extends FragmentStateAdapter {
-
-    public BookshelfFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+public class DiscoveryFragmentAdapter extends FragmentStateAdapter {
+    public DiscoveryFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
     }
 
@@ -20,9 +18,9 @@ public class BookshelfFragmentAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         if(position==1){
-            return new ReadHistoryFragment();
+            return new HotNovelFragment();
         }
-        return new LibraryFragment();
+        return new LastestReleaseFragment();
     }
 
     @Override

@@ -10,42 +10,36 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.hb.Object.Truyen;
+import com.example.hb.Object.TruyenKhamPha;
 import com.example.hb.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TruyenAdapter extends ArrayAdapter<Truyen> {
-
+public class NovelfullAdapter extends ArrayAdapter<TruyenKhamPha> {
     private Context ct;
-    private ArrayList<Truyen> arr;
+    private ArrayList<TruyenKhamPha> arr;
 
-    public TruyenAdapter(@NonNull FragmentActivity context, int resource, @NonNull List<Truyen> objects) {
+    public NovelfullAdapter(@NonNull Context context, int resource, @NonNull List<TruyenKhamPha> objects) {
         super(context, resource, objects);
         this.ct = context;
         this.arr = new ArrayList<>(objects);
-
     }
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if(convertView==null){
             LayoutInflater inflater = (LayoutInflater) ct.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView =  inflater.inflate(R.layout.item_truyen,null);
+            convertView =  inflater.inflate(R.layout.item_truyen_kham_pha,null);
         }
         if(arr.size()>0){
-            Truyen truyen = this.arr.get(position);
-            TextView tenTenTruyen = convertView.findViewById(R.id.txvTenTruyen);
-            TextView tenTenChap = convertView.findViewById(R.id.txvtenChap);
-            ImageView imgAnhTruyen = convertView.findViewById(R.id.imgAnhTruyen);
+            TruyenKhamPha truyen = this.arr.get(position);
+            TextView tenTenTruyen = convertView.findViewById(R.id.txvTenTruyenKhamPha);
+            ImageView imgAnhTruyen = convertView.findViewById(R.id.imgAnhTruyenKhamPha);
 
             tenTenTruyen.setText(truyen.getTenTruyen());
-            tenTenChap.setText(truyen.getTenChap());
             Glide.with(this.ct).load(truyen.getLinkAnh()).into(imgAnhTruyen);
         }
         return convertView;

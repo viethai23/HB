@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.hb.Activities.CaNhanActivity;
 import com.example.hb.Activities.CongDongActivity;
 import com.example.hb.Adapter.BookshelfFragmentAdapter;
+import com.example.hb.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
@@ -70,9 +71,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, CongDongActivity.class));
                         break;
                     case R.id.action_kesach:
-
+                        startActivity(new Intent(MainActivity.this,MainActivity.class));
                         break;
                     case R.id.action_khampha:
+                        startActivity(new Intent(MainActivity.this,KhamPhaActivity.class));
                         break;
                     case R.id.action_canhan:
                         startActivity(new Intent(MainActivity.this, CaNhanActivity.class));
@@ -88,4 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    private void setUpViewPager() {
+
+    }
 }

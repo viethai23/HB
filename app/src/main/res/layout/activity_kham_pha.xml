@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.KhamPhaActivity"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/app_bar_kham_pha_bg">
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:queryHint="Nhập tên truyện"
+            android:iconifiedByDefault="false"
+            android:padding="@dimen/_4sdp"
+            android:background="@color/white"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabDiscovery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/tabDiscovery"
+            android:labelFor="@id/tabDiscovery"
+            app:tabGravity="center"
+            app:tabIndicator="@color/white"
+            app:tabMode="fixed" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/discoveryPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

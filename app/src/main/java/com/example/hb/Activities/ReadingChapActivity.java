@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.hb.Api.ApiJsoupContentChap;
 import com.example.hb.Fragment.HotNovelFragment;
+import com.example.hb.Fragment.ReadHistoryFragment;
 import com.example.hb.Interfaces.LayTruyenVe;
 import com.example.hb.Object.ChapTruyen;
 import com.example.hb.R;
@@ -64,6 +65,7 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
                     Toast.makeText(ReadingChapActivity.this, "No Previous Chapter", Toast.LENGTH_SHORT).show();
                 }else{
                     chapPost-=1;
+                    ReadHistoryFragment.listTruyen.get(0).setCurrentChap(chapPost);
                     newStart();
                 }
             }
@@ -75,6 +77,7 @@ public class ReadingChapActivity extends AppCompatActivity implements Serializab
                     Toast.makeText(ReadingChapActivity.this, "No Next Chapter", Toast.LENGTH_SHORT).show();
                 }else{
                     chapPost+=1;
+                    ReadHistoryFragment.listTruyen.get(0).setCurrentChap(chapPost);
                     newStart();
                 }
             }

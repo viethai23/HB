@@ -18,6 +18,7 @@ import com.example.hb.Object.TruyenLichSu;
 import com.example.hb.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class ReadHistoryFragment extends Fragment {

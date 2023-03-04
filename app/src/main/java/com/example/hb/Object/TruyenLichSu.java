@@ -33,8 +33,11 @@ public class TruyenLichSu {
     }
 
     @Override
-    public boolean equals(TruyenLichSu o) {
-        return o.getTenTruyen().equals(this.tenTruyen);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TruyenLichSu that = (TruyenLichSu) o;
+        return Objects.equals(tenTruyen, that.tenTruyen);
     }
 
     @Override

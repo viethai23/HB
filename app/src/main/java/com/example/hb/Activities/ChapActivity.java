@@ -99,12 +99,12 @@ public class ChapActivity extends AppCompatActivity implements Serializable, Lay
                 boolean check = false;
                 for(TruyenLichSu i:ReadHistoryFragment.listTruyen) {
                     if(truyenls.equals(i)){
-                        i.setCurrentChap(position);
+                        ReadHistoryFragment.listTruyen.remove(i);
+                        ReadHistoryFragment.listTruyen.add(0,truyenls);
                         check = true;
                     }
                 }
-                if(!check) ReadHistoryFragment.listTruyen.add(truyenls);
-                Log.d("list truyen:", String.valueOf(ReadHistoryFragment.listTruyen.size()));
+                if(!check) ReadHistoryFragment.listTruyen.add(0,truyenls);
                 startActivity(intent);
             }
         });
